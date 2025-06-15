@@ -7,7 +7,7 @@ def player(prev_play, opponent_history=[]):
      choices = {0: "R", 1: "P", 2: "S"}
 
      guess = 'R'
-     gg = random.gauss(0, 8)
+     gg = random.gauss(0, 23)
 
      if len(opponent_history) > 2:
        if gg < -1:
@@ -19,7 +19,7 @@ def player(prev_play, opponent_history=[]):
                guess = "S"
           else:
                guess = ''
-       elif gg < 0:
+       elif gg < 1:
            if prev_play == 'R':
                guess = "P"
            elif prev_play == 'P':
@@ -28,7 +28,7 @@ def player(prev_play, opponent_history=[]):
                guess = 'R'
            else:
                guess = ""
-       elif gg < 1:
+       elif gg < 2:
            if prev_play == 'R':
                guess = "R"
            elif prev_play == 'P':
@@ -37,7 +37,7 @@ def player(prev_play, opponent_history=[]):
                guess = 'R'
            else:
                guess = ""
-       elif gg < 2:
+       elif gg < 3:
            if prev_play == 'R':
                guess = ''
            elif prev_play == 'P':
